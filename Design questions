@@ -35,3 +35,9 @@ http://www.cs.iit.edu/~cs561/cs450/ChilkuriDineshThreads/dinesh's%20files/User%2
 
 seg fault:
 https://www.cnblogs.com/no7dw/archive/2013/02/20/2918372.html
+
+
+Two thread updating a variable (initial value of 0) without a lock, each thread uses a loop of 50 to increment a global variable.
+What is the minimum and maximum possible value you can get?
+
+
