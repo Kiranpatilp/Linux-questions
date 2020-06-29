@@ -1,42 +1,54 @@
 Readers-Writers Problem:
-https://www.geeksforgeeks.org/readers-writers-problem-set-1-introduction-and-readers-preference-solution/
-https://youtu.be/kn2Okc2cAaQ
+-----------------------
+  https://www.geeksforgeeks.org/readers-writers-problem-set-1-introduction-and-readers-preference-solution/
+  https://youtu.be/kn2Okc2cAaQ
 
 https://www.geeksforgeeks.org/print-numbers-sequence-using-thread-synchronization/
 
 https://stackoverflow.com/questions/22004690/print-odd-and-even-numbers-using-2-threads-using-mutex-in-c
 
 external sort:
-https://www.youtube.com/watch?v=Bp7fGofslng&list=PLcOwoju_D0aZ34BfwFcxA3Ba5hTSf36Ab&index=36&t=0s
+-------------
+  https://www.youtube.com/watch?v=Bp7fGofslng&list=PLcOwoju_D0aZ34BfwFcxA3Ba5hTSf36Ab&index=36&t=0s
 
 process state:
-https://www.geeksforgeeks.org/states-of-a-process-in-operating-systems/
+-------------
+  https://www.geeksforgeeks.org/states-of-a-process-in-operating-systems/
 
 thread state:
-https://www.geeksforgeeks.org/thread-states-in-operating-systems/?ref=rp
+------------
+  https://www.geeksforgeeks.org/thread-states-in-operating-systems/?ref=rp
 
-producer and consumer
-mutex:
-
-semaphore:
+producer and consumer:
+---------------------
+  semaphore:
+  ---------
+    https://www.youtube.com/watch?v=hyQz97Jym_w
+  mutex:
+  ------
 
 
 Ls implimentations:
-https://medium.com/@earthtojhuang/what-happens-when-you-type-ls-l-in-the-shell-8cf0c182baa8
+------------------
+  https://medium.com/@earthtojhuang/what-happens-when-you-type-ls-l-in-the-shell-8cf0c182baa8
 
 LRU:
-https://www.geeksforgeeks.org/lru-cache-implementation/
+----
+  https://www.geeksforgeeks.org/lru-cache-implementation/
 
 Own memory allocation:
-https://www.geeksforgeeks.org/buddy-memory-allocation-program-set-1-allocation/
-https://www.geeksforgeeks.org/implementation-of-all-partition-allocation-methods-in-memory-management/?ref=rp
+---------------------
+  https://www.geeksforgeeks.org/buddy-memory-allocation-program-set-1-allocation/
+  https://www.geeksforgeeks.org/implementation-of-all-partition-allocation-methods-in-memory-management/?ref=rp
 
 
 User thread and kernel thread:
-http://www.cs.iit.edu/~cs561/cs450/ChilkuriDineshThreads/dinesh's%20files/User%20and%20Kernel%20Level%20Threads.html
+-----------------------------
+  http://www.cs.iit.edu/~cs561/cs450/ChilkuriDineshThreads/dinesh's%20files/User%20and%20Kernel%20Level%20Threads.html
 
 seg fault:
-https://www.cnblogs.com/no7dw/archive/2013/02/20/2918372.html
+---------
+  https://www.cnblogs.com/no7dw/archive/2013/02/20/2918372.html
 
 
 Two thread updating a variable (initial value of 0) without a lock, each thread uses a loop of 50 to increment a global variable.
