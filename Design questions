@@ -1,13 +1,13 @@
-Readers-Writers Problem:
+Readers-Writers Problem:[VMWare]
 -----------------------
   https://www.geeksforgeeks.org/readers-writers-problem-set-1-introduction-and-readers-preference-solution/
   https://youtu.be/kn2Okc2cAaQ
 
-https://www.geeksforgeeks.org/print-numbers-sequence-using-thread-synchronization/
+https://www.geeksforgeeks.org/print-numbers-sequence-using-thread-synchronization/ [VMWare]
 
 https://stackoverflow.com/questions/22004690/print-odd-and-even-numbers-using-2-threads-using-mutex-in-c
 
-external sort:
+external sort:[VMWare]
 -------------
   https://www.youtube.com/watch?v=Bp7fGofslng&list=PLcOwoju_D0aZ34BfwFcxA3Ba5hTSf36Ab&index=36&t=0s
 
@@ -15,11 +15,11 @@ process state:
 -------------
   https://www.geeksforgeeks.org/states-of-a-process-in-operating-systems/
 
-thread state:
+thread state:[Intel]
 ------------
   https://www.geeksforgeeks.org/thread-states-in-operating-systems/?ref=rp
 
-producer and consumer:
+producer and consumer:[VMWare]
 ---------------------
   semaphore:
   ---------
@@ -28,15 +28,15 @@ producer and consumer:
   ------
 
 
-Ls implimentations:
+Ls implimentations:[VMWare]
 ------------------
   https://medium.com/@earthtojhuang/what-happens-when-you-type-ls-l-in-the-shell-8cf0c182baa8
 
-LRU:
+LRU:[VMWare]
 ----
   https://www.geeksforgeeks.org/lru-cache-implementation/
 
-Own memory allocation:
+Own memory allocation:[Nutanix]
 ---------------------
   https://www.geeksforgeeks.org/buddy-memory-allocation-program-set-1-allocation/
   https://www.geeksforgeeks.org/implementation-of-all-partition-allocation-methods-in-memory-management/?ref=rp
@@ -55,3 +55,77 @@ Two thread updating a variable (initial value of 0) without a lock, each thread 
 What is the minimum and maximum possible value you can get?
 
 
+
+Caching with read & write problem:[VMWare]
+-------------------------------
+
+question: 
+    B Tree structure { input is a URL , output is the object corr. to the URL}
+   root: /index.html , 100Bytes of data Obj
+   root->left: /blah.html, 1000 bytes of data obj
+   root->right: /ind.html , 1200Bytes of data Obj
+   
+   
+   /foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo.html. 
+   
+   struct node {
+       void *obj;
+       void *key;
+       struct node *right, left;
+       }
+       
+   Q1:
+       Design a DS with a Key to lookup this Cache
+       Limit the size of the Cache to N objects
+
+
+solution: 
+       struct node {
+       void *obj;
+       void key;  //convert url to hash search will be easy
+       int *address; // store doubly linked list address, similer to LRU cache for DLL.
+       struct node *right, *left;
+       }
+       
+     Q2:
+     multiple read single write problem.
+     
+     
+Memory allocation 4byte boundary:[VMWare]
+--------------------------------
+ Assume a system where it returns memory allocations on a byte boundary - i.e. malloc returns memory that is byte-aligned (as opposed to 8 or 4 byte boundary). 
+
+ A program that you are writing requires memory allocations to happen on 4 byte boundaries. This requires you to write a custom memory allocation routine such 
+ that it is a wrapper around the existing malloc routine to return 4-byte align memory. How would you do this?
+ 
+ Solution:
+
+int *memoryAlloc(int size)
+{
+    int *ptr = (int *)malloc(size + 4);
+    int extra = 4 - (ptr % 4);
+    *(ptr - 1) = extra;
+      return ptr  + extra;
+ }
+
+
+void memoryFree(int *ptr)
+{
+    ptr = ptr - *(ptr - 1)
+    free(ptr);
+}
+
+int SampleProgram()
+{
+    int *a = memoryAlloc(36);   // internally malloc returned address 0x47 ===> 0x48
+    int *b = memoryAlloc(6 * sizeof(int));
+    // user input value into the array,
+    // user input value into array b
+    // 2 array operations like summation
+    // Print the result
+    // ?? Free memory
+    memoryFree(a);
+    return 0;
+}
+
+     
