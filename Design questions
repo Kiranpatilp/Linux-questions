@@ -11,7 +11,7 @@ external sort:[VMWare]
 -------------
   https://www.youtube.com/watch?v=Bp7fGofslng&list=PLcOwoju_D0aZ34BfwFcxA3Ba5hTSf36Ab&index=36&t=0s
 
-process state:
+process state:[VMWare]
 -------------
   https://www.geeksforgeeks.org/states-of-a-process-in-operating-systems/
 
@@ -28,7 +28,7 @@ producer and consumer:[VMWare]
   ------
     PFA of "OS task management"
 
-Ls implimentations:[VMWare]
+Ls implimentations:[VMWare, vsan]
 ------------------
   https://medium.com/@earthtojhuang/what-happens-when-you-type-ls-l-in-the-shell-8cf0c182baa8
 
@@ -56,7 +56,7 @@ What is the minimum and maximum possible value you can get?
 
 
 
-Caching with read & write problem:[VMWare]
+Caching with read & write problem:[VMWare, avi]
 -------------------------------
 
 question: 
@@ -91,7 +91,7 @@ solution:
      multiple read single write problem.
      
      
-Memory allocation 4byte boundary:[VMWare]
+Memory allocation 4byte boundary:[VMWare, avi]
 --------------------------------
  Assume a system where it returns memory allocations on a byte boundary - i.e. malloc returns memory that is byte-aligned (as opposed to 8 or 4 byte boundary). 
 
@@ -128,4 +128,10 @@ int SampleProgram()
     return 0;
 }
 
-     
+
+Design own library to handle dynamic allocation/deallocation of memory. What data structure to maintain these information?  [Nutanix]
+-------------------------------------------------------------------------------------------------------------------------
+
+
+System design : Design a system which converts long URL into short URL. Need to handle insert/search, algorithm to have unique short URL for all long URL[VMWare, avi]
+--------------------------------------------------------------------------------------------------------------------------------------------------------
