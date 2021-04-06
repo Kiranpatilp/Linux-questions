@@ -1,0 +1,15 @@
+1. grep : The grep filter searches a file for a particular pattern of characters, and displays all lines that contain that pattern.
+   synatx : grep [options] pattern [files]
+   ex :     grep -r "expect_error" ./
+
+2. find : . It can be used to find files and directories and perform subsequent operations on them.
+
+   ex: find ./ -name "*must_check*"
+       find ./ -iname "avi_config"
+
+
+3. netstat -ntlp 
+
+
+4. cat <file_name> | grep <string> 
+    ex : cat  /etc/nginx/nginx.conf | grep access_log
