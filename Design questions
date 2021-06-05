@@ -54,6 +54,15 @@ seg fault:
 
 Two thread updating a variable (initial value of 0) without a lock, each thread uses a loop of 50 to increment a global variable.
 What is the minimum and maximum possible value you can get?
+Max: 100
+Min: 2
+
+A possible execution sequence that results in 2 is as follows (Rx means read x, Wx means write x, - other operation):
+
+Thread #1: - - - - R0 W1 R1 W2 ... R48 W49 - - - - - R1 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - W2
+Time Line: -------------------------------------------------------------------------------------------------------------------------------->
+Thread #2: R0 - - - - - - - - - - - - - - - - - - - - - - - - W1 - - - - R1 W2 R2 W3 ... R48 W49 R49 W50
+
 
 
 
