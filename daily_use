@@ -13,3 +13,6 @@
 
 4. cat <file_name> | grep <string> 
     ex : cat  /etc/nginx/nginx.conf | grep access_log
+    
+    
+5. Tmux
