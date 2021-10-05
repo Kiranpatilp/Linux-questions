@@ -1,0 +1,40 @@
+Linux questions
+
+1.When is multi threading not useful?
+ans: This is a really hard question to answer because it's so vague, but generally multi threading is not useful when some sequential number of operations 
+     must be performed in order. Suppose there are n operations that need to be performed each after the other. To add multi threading to this would be to 
+     increase the number of context switches for solving this problem, which would make it take more time. Of course, if you can solve those n operations 
+     independently, then multi threading should decrease time to solve here.
+
+2. What is TLB?
+ans : Translational Lookaside Buffer - It's a cache on the CPU that stores roughly 64 or 128 virtual to physical memory address mappings. It has some sort of policy 
+      (like Last Recently Used) for removing entries when it is full.
+      
+3. DIfference between Paging and Segmentation?
+ans : Paging is where virtual memory is split up into fixed sized Frames which map on to fixed sized Page Frames. Segmentation is where each segment of 
+      virtual memory, usually Stack and Heap, are mapped to physical segments.
+     The pros of paging are that there is no external fragmentation, that is, there are not slivers of physical memory that are unused but are too small to 
+     allocate to some process. The cons are that there is high internal fragmentation though, because a process might not need its entire Frame. 
+     Mapping between virtual memory location and physical memory location with paging usually takes more memory, as there is something called a Page Frame Table 
+     that stores this mappings. The pros of segmentation is there there is no internal fragmentation, because a process is using exactly as much memory as 
+     it asked for. Also, mapping between virtual and physical segments takes very little memory. For each address you only need to store a segment number 
+     (0 for heap, 1 for stack for example) and the offset into that segment. Usually, in a register is the physical beginning address of that segment. 
+     The cons are that there is external fragmentation as little pieces of physical memory are allocated to various processes. 
+     This requires very expensive compaction. I think it's more common to use paging these days, or at least it was for a very long time.
+     
+     
+4.  What is Paging?
+ans : Explained in 3
+
+5. What is Virtual Memory?
+ans: Virtual Memory is the OS abstraction of physical memory, just like a process is the OS abstraction of a program. Virtual Memory is what the program 
+sees to simplify writing code, allocating memory, etc. All Virtual Memory locations accessed and altered in a program get mapped to Physical Memory locations 
+where the actual data is stored.
+
+6. What is Page fault?
+ans : A page fault is where a process tries to access memory outside of its allocated Frames, i.e. in another page.
+
+
+7. What is Cache?
+ans:  Cache can be loosely referred to as data that is stored in some volatile form that is quicker to look up than a more persistent form. But cache literally 
+      refers to some space on the CPU that will be searched through on every read to avoid having to go to memory, because it's faster.
