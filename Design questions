@@ -1,3 +1,8 @@
+Task Scheduler:
+---------------
+https://leetcode.com/problems/task-scheduler/
+
+
 Readers-Writers Problem:[VMWare, vsan, avi]
 -----------------------
   https://www.geeksforgeeks.org/readers-writers-problem-set-1-introduction-and-readers-preference-solution/
@@ -7,18 +12,22 @@ https://www.geeksforgeeks.org/print-numbers-sequence-using-thread-synchronizatio
 
 https://stackoverflow.com/questions/22004690/print-odd-and-even-numbers-using-2-threads-using-mutex-in-c
 
+
 external sort:[VMWare, vsan]
 -------------
   https://www.youtube.com/watch?v=Bp7fGofslng&list=PLcOwoju_D0aZ34BfwFcxA3Ba5hTSf36Ab&index=36&t=0s
   https://www.geeksforgeeks.org/external-sorting/
 
+
 process state:[VMWare, vsan]
 -------------
   https://www.geeksforgeeks.org/states-of-a-process-in-operating-systems/
 
+
 thread state:[Intel]
 ------------
   https://www.geeksforgeeks.org/thread-states-in-operating-systems/?ref=rp
+
 
 producer and consumer:[VMWare]
 ---------------------
@@ -29,9 +38,11 @@ producer and consumer:[VMWare]
   ------
     PFA of "OS task management"
 
+
 Ls implimentations:[VMWare, vsan]
 ------------------
   https://medium.com/@earthtojhuang/what-happens-when-you-type-ls-l-in-the-shell-8cf0c182baa8
+
 
 LRU:[VMWare]
 ----
@@ -51,6 +62,8 @@ Own memory allocation:[Nutanix]
 User thread and kernel thread:
 -----------------------------
   http://www.cs.iit.edu/~cs561/cs450/ChilkuriDineshThreads/dinesh's%20files/User%20and%20Kernel%20Level%20Threads.html
+
+
 
 seg fault:
 ---------
