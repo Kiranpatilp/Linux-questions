@@ -1,0 +1,270 @@
+1) Design time based job scheduler. (https://github.com/adkhunt/Interview/blob/master/Thread/time_based_scheduler.c)
+eg. User submits the job j with time t, scheduler should shedule that job after given t time.
+    Input:  schedule_job (printf("Hi, start"), 6000L) // pritnf is the task and 6000 is the milisecond time.
+            schedule_job (printf("Hello, start", 2000L))
+            sleep(3);
+            schedule_job (printf ("Bye"), 4000L)
+            
+    Output: Hello, start
+            Hi, start
+            Bye
+            
+            
+2) Design garbage collector in cloud storage.
+  Eg. There is a public cloud, In that cloud user can push any number of files and storage is limited. So design a service which will
+      delete files after given time.
+      Lets say in folder f, user copied files and configured time by cloud provider is 5 days. After 5 days whatever files/folders
+      were created needs to deleted by service.
+      
+3) Design library (Standard question).
+4) Design malloc in OS.
+5) Reverse of question-1. Design a scheduler which takes process P and time T as argument and schedule that process normally.
+   After T time that process should get killed by scheduler.
+6) Design a insert and get method. Insert will take filename, key and value. given key and value needs to inserted to given file.
+   Get method will take key and find that key from files and return the corresponding value to that key.
+   Constrains: There could be thousands of files.
+    Eg. insert(file, key, value)
+        get (key)
+    
+7) Design a centralised system which can take care of installation of services on multiple targets.
+    Eg. There is a one management platform like vCenter where multiple ESXi are connected to it. Need to design a system in
+        vCenter which can take care of installation of service on all the ESXi servers.
+    --> Need to take care of take care of vm migration and storage migration if that service needs reboot of ESXi.
+    
+8) https://github.com/adkhunt/Interview/blob/master/Array/schedule_task_with_cooldown.c
+
+9) Array of integer denotes the wheels, WAP to print the number of ways to provide the solution.
+   Eg. Array of integer as below,
+       6, 8, 10, 3    <-- Which denotes the number of wheel. You have two option either you can have 2-wheeler or 4-wheeler so below could be the solution,
+       2, 3, 3, 0
+       When we have 6 wheels we can solve it as below,
+       1. We can have 3 2-wheelers.
+       2. We can have one 4-wheeler and one 2-wheeler.
+       So answer for 6 is 2.
+       When we have 3 in that case we can not provide any solution so answer is 0.
+       
+10) You are given a encoded string and WAP to decode that string. (https://github.com/adkhunt/cpp/blob/master/debug_string.cpp)
+    Eg, my name is -> mnes--ya-----mi -> my name is (In below matrix arranged the character in diagonal position.)
+        m  n  e  s  _
+        _  y  a  _  _
+        _  _  _  m  i
+        
+    In above string you will be given the number of raw with encoded string and have to decode the string.
+    
+11) Delete Nth node from end in linklist.
+    Eg. 1 -> 2 -> 3 -> 4 -> 5 -> NULL, N = 2
+       Op: 1 -> 2 -> 3 -> 5 -> NULL
+       
+12) Given multiple source files, WAP to resolve depedency of those source files. (Topological sort) (https://github.com/adkhunt/cpp/blob/master/resolve_dependency_in_graph.cpp)
+13) Design data-structure which can perform all(Insert, delete, search, getRandom) operation in O(1) time.
+14) Given a matrix with 0 and 1, where 0 indicate space and 1 indicate wall. Given starting and ending location. WAP if from starting location ball can reach to end
+location. (https://github.com/adkhunt/cpp/blob/master/pathExists.cpp)
+    Constrain: Ball only can turn once it hits to wall.
+    Eg. 1 1 0 0   -> Start location (0, 3) end location (3, 3)
+        1 0 0 0
+        1 0 1 1
+        1 0 0 0
+        
+15) Given a hierarchy of organisation, WAP to find closest manager of given two employee. (https://github.com/adkhunt/cpp/blob/master/find_closest_manager.cpp)
+16) https://www.geeksforgeeks.org/combinations-string-digits/
+17) https://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/ (https://github.com/adkhunt/cpp/blob/master/clone_ll_with_random_ptr.cpp)
+18) Search and element in sorted row and colomn matrix.
+19) Given sorted array, value and k, print all k nearest element to value. (https://github.com/adkhunt/cpp/blob/master/print_k_nearest_in_sorted.cpp)
+20) https://www.geeksforgeeks.org/combinational-sum/
+21) Create linklist from given tree at each level and return array or hptr of all level. (https://github.com/adkhunt/cpp/blob/master/create_linklist_bt_level.cpp)
+22) Producer and consumer problem.(https://github.com/adkhunt/Interview/blob/master/Thread/producer_consumer_buffer.c)
+23) Write a service to enter record of student in linklist/file and another to print detail of database.
+    Constraints: 1) Service should be async (Any number of thread can call this service) and returns operation id immediately (Should not wait until actual entry).
+                 2) Handle duplication entry in linklist.
+24) Write a program to print tree in in-order traversal using iterative method.
+25) Dutch nation flag problem.
+26) WAP two program which shows use of shared memory.
+    Addition to this question: One program is keep sending the filename and other program will read filename and return the content of file to first program.
+27) What is unix socket domain.
+28) How to see memory allocation of c program. (size a.out)
+29) Difference between fork and exec.
+29) select & poll in unix.
+30) What happen internally when we open file. (App->VFS->FS->BlockLayer(BIO-Object)->DeviceDriver->H/W)
+31) How address is decoded in x86 architecture.
+32) What is huge page in x86 architecture in linux.
+33) Boot process of linux.
+34) Basics of RPC.
+35) WAP to get min from stack in O(1) time.
+36) What internally happen when you type any url in browser.
+37) Initial communication of newly added device in network. (How it get ip and how it broadcast its detail to n/w connected by switch).
+38) write a library for stack in c. (Should be thread safe).
+39) What is function callback.
+40) WAP where three threads keep on allocating memory each second and fourth thread will print total allocated memory by each thread every 10 second. (https://github.com/adkhunt/Interview/blob/master/Thread/thread_memory_allocation.c)
+
+41) --------------------------------------------------------------------------------------------------------------------------------------------
+(https://github.com/adkhunt/cpp/blob/master/employee_access_time.cpp)
+We are working on a security system for a badged-access room in our company's building.
+
+
+We want to find employees who badged into our secured room unusually often. We have an unordered list of names and entry times over a single day. Access times are given as numbers up to four digits in length using 24-hour time, such as "800" or "2250".
+
+
+Write a function that finds anyone who badged into the room three or more times in a one-hour period. Your function should return each of the employees who fit that criteria, plus the times that they badged in during the one-hour period. If there are multiple one-hour periods where this was true for an employee, just return the earliest one for that employee.
+
+
+badge_times = [
+  ["Paul",      "1355"], ["Jennifer",  "1910"], ["Jose",    "835"],
+  ["Jose",       "830"], ["Paul",      "1315"], ["Chloe",     "0"],
+  ["Chloe",     "1910"], ["Jose",      "1615"], ["Jose",   "1640"],
+  ["Paul",      "1405"], ["Jose",       "855"], ["Jose",    "930"],
+  ["Jose",       "915"], ["Jose",       "730"], ["Jose",    "940"],
+  ["Jennifer",  "1335"], ["Jennifer",   "730"], ["Jose",   "1630"],
+  ["Jennifer",     "5"], ["Chloe",     "1909"], ["Zhang",     "1"],
+  ["Zhang",       "10"], ["Zhang",      "109"], ["Zhang",   "110"],
+  ["Amos",         "1"], ["Amos",         "2"], ["Amos",    "400"],
+  ["Amos",       "500"], ["Amos",       "503"], ["Amos",    "504"],
+  ["Amos",       "601"], ["Amos",       "602"],
+];
+
+
+Expected output (in any order)
+   Paul: 1315 1355 1405
+   Jose: 830 835 855 915 930
+   Zhang: 10 109 110
+   Amos: 500 503 504
+
+
+n: length of the badge records array
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+42) --------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * An service serves files in multiple physical locations in order to minimise client latency.
+ * Cloudfront can be visualised as a 2D grid of servers. When provider wants to host a file on Cloudfront,
+ * the file needs to be distributed to all servers. The servers are in the form of a 2D array of 0s and 1s,
+ * where the value 0 represents a server that has yet to receive the file and 1 represents a server that
+ * already has the file.
+ * 
+ * Provider will initially send the file to a handful of (but not all) servers based on expected utilisation.
+ * A server, upon receiving a file, will then send the file to adjacent servers that don't yet have the file.
+ * An adjacent server is either on the left, right, above or below a given server. To conserve bandwidth,
+ * once a server receives a file, it will wait 1 hour before sending the file to adjacent servers.
+ * 
+ * Given the 2D array representing the existence of a new file on each server, write an algorithm that will 
+ * determine the minimum number of hours required to send the file to all the available servers.
+ * 
+ * Input:
+ * The input to the function/method consists of three arguments:
+ * rows, an integer representing the number of rows in the grid;
+ * columns, an integer representing the number of columns in the grid;
+ * grid, an integer array representing the current status of its servers.
+ *       The value 0 represents a server that has yet to receive the file and 1 represents a
+ *       server that already has the file.
+ * 
+ * Output:
+ * Return an integer representing the minimum number of hours required to send the file to all the available
+ * servers. Return -1 if all the available servers cannot receive the file.
+ * 
+ * Note:
+ * Diagonally placed cells are not considered adjacent.
+ * 
+ * Example
+ * Input:
+ * rows = 4
+ * columns = 5
+ * grid =
+ * [[0, 1, 1, 0, 1],
+ *  [0, 1, 0, 1, 0],
+ *  [0, 0, 0, 0, 1],
+ *  [0, 1, 0, 0, 0]]
+ * 
+ * Output:
+ * 2
+ * 
+ * Explanation:
+ * At the end of the first hour, the status of the servers :
+ * 1, 1, 1, 1, 1
+ * 1, 1, 1, 1, 1
+ * 0, 1, 0, 1, 1
+ * 1, 1, 1, 0, 1
+ * 
+ * at the end of the second hour, the status of the servers :
+ * 1, 1, 1, 1, 1
+ * 1, 1, 1, 1, 1
+ * 1, 1, 1, 1, 1
+ * 1, 1, 1, 1, 1
+ * 
+ * By the end of two hours, all the servers are up to date.
+ --------------------------------------------------------------------------------------------------------------------------------------------
+
+42) Binary buddy bitmap.
+43) Write a program to crawl a website. (DFS with modified levels in traversal)
+    Constrains: Seeds Urls are given and also given a max depth till where you have to traverse.
+    Assumption: There is a given api which will return list of Urls inside given Url.
+44) Floyd's cycle detection.
+45) Print all leaf nodes recursively in tree.  (https://github.com/adkhunt/cpp/blob/master/print_leaf_recursive.cpp)
+    Eg.     1           1
+          /   \
+        2      3
+      /  \
+    4     5
+    Output: [[4, 5, 3], [2], [1]]
+    Constraints: Do not modify the tree. Once leaf node is printed print next leaf node in the tree.
+46) Given a list of sting and a word, find all words which can be create by modifying one character. (https://github.com/adkhunt/cpp/blob/master/string_with_one_char_diff.cpp)
+    Eg. Given List: ["tip", "top", "hop", "dog", "gog", "cop", "hip", "sip", "tog"]
+        Given Word: cog
+        Output: ["dog", "gog"]
+        
+    Addition to above question: Given a source word and target word, find the minimum hop to reach to target word. (BFS on all possible result.)
+    Eg. Start Word: tip
+        target word: cop
+        Conversion: tip -> top -> cop
+        Output: 2
+47) https://github.com/adkhunt/cpp/blob/master/find_word_in_matrix.cpp
+48) Fllod fill algorithm in paint. (https://github.com/adkhunt/cpp/blob/master/flood_fill.cpp)
+49) Maximum number of meetings that can be attended from given schedule of time. (https://github.com/adkhunt/cpp/blob/master/max_meeting_attend.cpp)
+50) Minimum edit distance.
+51) Given infix expression without opening braces. Write a program to create valid infix expression. (https://github.com/adkhunt/cpp/blob/master/Valid_infix_expression.cpp)
+    Eg. 1 + 2) * 3 - 4) * 5 - 6)))
+    Op -> ((1+2) * ((3-4) * (5-6)))
+52) Given perfect binary tree. Swap all leaf node with non-leaf nodes. (https://github.com/adkhunt/cpp/blob/master/Swap_leaf_nodes.cpp)
+53) Given data of student in form of <name, grade>. Write a program which supports below operations effectively,
+    1) Add detail of student.
+    2) Delete given detail from data structure.
+    3) Print all student with given grade.
+    4) Print all student with grade order.
+    5) Print all pair(2) of student whose grade sum is equal to given sum.
+54) Given an array A consisting of every number from 1 to N arranged in a random order.
+    It is also possible to swap a particular element at index i with an element at index i+1 for a particular set of indices.
+    The indices for which these swaps are allowed are given in the form of a string S of 1's and 0's.
+    If the i'th position of a string has 1, then it is possible to swap the i'th element of index with the (i+1)'th element else it is not allowed.
+    There is no limit on the number of swaps allowed, that is, you can make any number of swaps (as long as they are valid).
+    Find if it is possible to arrange the array in ascending order using any amount of swaps.
+    Constraints:
+    1.   2 <= N <= 100000
+    2.   String S contains n-1 characters and is made up of only 0's and 1's.
+    Input: Integer N (size of array) , array of containing elements from 1 to N in random order, string S made up of 1's and 0's
+    Output: Return a string "YES" if it is possible to arrange array in ascending order, else return "NO".
+
+55) Assume there are 'n' machines where each machine can talk to only neighbouring machines ( i.e to machine to left or to right one if it exists) and assume you are given below functions which have been already implemented and each machine can run them.
+
+    Already Implemented functions:
+
+    bool hasLeft() : returns true if there is a machine on left else false
+    bool hasRight() : returns true if there is a machine on right else false
+    void sendLeft(Message m) : sends a message to machine on left
+    void sendRight(Message m) : sends a message to machine on right
+    
+    Now using above functions implement below functions :
+    
+    void receiveLeft(Message m) : receives message from left machine
+    void receiveRight(Message m) : receives message from right machine
+    void start() : a start routine that each machine runs when it gets booted up
+    
+    keeping in mind that the goal for each machine is to compute the size of the list i.e 'n'.
+
+
+56) Given a matrix with integer value, find the minimum to reach at the end of the matrix.
+    Start from [0][0] index and can be go in any four directions.
+
+57) Given a binary tree where each node can only have a digit (0-9) value, each root-to-leaf path will represent a number. Find the total sum of all the numbers represented by all paths.
+
+58) Given a binary tree, populate an array to represent its zigzag level order traversal. You should populate the values of all nodes of the first level from left to right, then right to left for the //next level and keep alternating in the same manner for the following levels.
+
+59) CSV parser using cpp
+60) WAP to get the minimum steps to reach to floor. given max up and down value.
