@@ -12,30 +12,30 @@ https://leetcode.com/problems/task-scheduler/
 http://lixinchengdu.github.io/algorithmbook/leetcode/task-scheduler.html?h=task%20sc
 
 
-design-in-memory-file-system: [oracle]
+design-in-memory-file-system: [o_r_a_c_l_e]
 -----------------------------
 https://leetcode.com/problems/design-in-memory-file-system/
 http://lixinchengdu.github.io/algorithmbook/leetcode/design-in-memory-file-system.html
 
 
 
-Readers-Writers Problem:[VMWare, vsan, avi]
+Readers-Writers Problem:[V_M_W_a_r_e, v_s_a_n, a_v_i]
 -----------------------
   https://www.geeksforgeeks.org/readers-writers-problem-set-1-introduction-and-readers-preference-solution/
   https://youtu.be/kn2Okc2cAaQ
 
-https://www.geeksforgeeks.org/print-numbers-sequence-using-thread-synchronization/ [VMWare, vsan]
+https://www.geeksforgeeks.org/print-numbers-sequence-using-thread-synchronization/ [V_M_W_a_r_e, v_s_a_n]
 
 https://stackoverflow.com/questions/22004690/print-odd-and-even-numbers-using-2-threads-using-mutex-in-c
 
 
-external sort:[VMWare, vsan]
+external sort:[V_M_W_a_r_e, v_s_a_n]
 -------------
   https://www.youtube.com/watch?v=Bp7fGofslng&list=PLcOwoju_D0aZ34BfwFcxA3Ba5hTSf36Ab&index=36&t=0s
   https://www.geeksforgeeks.org/external-sorting/
 
 
-process state:[VMWare, vsan]
+process state:[V_M_W_a_r_e, v_s_a_n]
 -------------
   https://www.geeksforgeeks.org/states-of-a-process-in-operating-systems/
 
@@ -45,7 +45,7 @@ thread state:[Intel]
   https://www.geeksforgeeks.org/thread-states-in-operating-systems/?ref=rp
 
 
-producer and consumer:[VMWare]
+producer and consumer:[V_M_W_a_r_e]
 ---------------------
   semaphore:
   ---------
@@ -55,12 +55,12 @@ producer and consumer:[VMWare]
     PFA of "OS task management"
 
 
-Ls implimentations:[VMWare, vsan]
+Ls implimentations:[V_M_W_a_r_e, v_s_a_n]
 ------------------
   https://medium.com/@earthtojhuang/what-happens-when-you-type-ls-l-in-the-shell-8cf0c182baa8
 
 
-LRU:[VMWare]
+LRU:[V_M_W_a_r_e]
 ----
   https://www.geeksforgeeks.org/lru-cache-implementation/
   
@@ -69,7 +69,7 @@ LRU:[VMWare]
  https://jerry4013.github.io/Github-blog/2020/08/03/LeetCode-588.html
  
 
-Own memory allocation:[Nutanix]
+Own memory allocation:[N_u_t_a_n_i_x]
 ---------------------
   https://www.geeksforgeeks.org/buddy-memory-allocation-program-set-1-allocation/
   https://www.geeksforgeeks.org/implementation-of-all-partition-allocation-methods-in-memory-management/?ref=rp
@@ -100,7 +100,7 @@ Thread #2: R0 - - - - - - - - - - - - - - - - - - - - - - - - W1 - - - - R1 W2 R
 
 
 
-Caching with read & write problem:[VMWare, avi]
+Caching with read & write problem:[V_M_W_a_r_e, a_v_i]
 -------------------------------
 
 question: 
@@ -135,7 +135,7 @@ solution:
      multiple read single write problem.
      
      
-Memory allocation 4byte boundary:[VMWare, avi]
+Memory allocation 4byte boundary:[V_M_W_a_r_e, a_v_i]
 --------------------------------
  Assume a system where it returns memory allocations on a byte boundary - i.e. malloc returns memory that is byte-aligned (as opposed to 8 or 4 byte boundary). 
 
@@ -173,11 +173,11 @@ int SampleProgram()
 }
 
 
-Design own library to handle dynamic allocation/deallocation of memory. What data structure to maintain these information?  [Nutanix]
+Design own library to handle dynamic allocation/deallocation of memory. What data structure to maintain these information?  [N_u_t_a_n_i_x]
 -------------------------------------------------------------------------------------------------------------------------
 
 
-System design : Design a system which converts long URL into short URL. Need to handle insert/search, algorithm to have unique short URL for all long URL[VMWare, avi]
+System design : Design a system which converts long URL into short URL. Need to handle insert/search, algorithm to have unique short URL for all long URL[V_M_W_a_r_e, a_v_i]
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
