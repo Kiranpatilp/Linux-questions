@@ -40,7 +40,7 @@ process state:[V_M_W_a_r_e, v_s_a_n]
   https://www.geeksforgeeks.org/states-of-a-process-in-operating-systems/
 
 
-thread state:[Intel]
+thread state:[I_n_t_e_l]
 ------------
   https://www.geeksforgeeks.org/thread-states-in-operating-systems/?ref=rp
 
@@ -64,7 +64,7 @@ LRU:[V_M_W_a_r_e]
 ----
   https://www.geeksforgeeks.org/lru-cache-implementation/
   
- Design In-Memory File System[oracle]
+ Design In-Memory File System [o_r_a_c_l_e]
  -----------------------------
  https://jerry4013.github.io/Github-blog/2020/08/03/LeetCode-588.html
  
