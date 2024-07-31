@@ -1,29 +1,167 @@
 1. grep : The grep filter searches a file for a particular pattern of characters, and displays all lines that contain that pattern.
    synatx : grep [options] pattern [files]
    ex :     grep -r "expect_error" ./
-
+----------------------------------------------------------------------------------------------------------------------------------------------------
 2. find : . It can be used to find files and directories and perform subsequent operations on them.
 
    ex: find ./ -name "*must_check*"
        find ./ -iname "avi_config"
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------
 3. netstat -ntlp 
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------
 4. cat <file_name> | grep <string> 
     ex : cat  /etc/nginx/nginx.conf | grep access_log
     
-    
+----------------------------------------------------------------------------------------------------------------------------------------------------
 5. Tmux
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
+ethtool -k
+ethtool --show-priv-flags
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Networking :
+
+arp -n
+arp -s 169.254.1.1 de:a9:67:cc:77:81 -i eth1
+ipaddress -a 
+
+
+MTU :
+ip link show eth0
+ip link set mtu 1472 dev eth0
+
+route -n
+ip route
+
+Route add and delete:
+ip route
+ip route add <>
+ip route delete <>
+ 
+ping <ip> -I <interface>      >>>> ping from specific interface
+
+Deleting main interface IP: 
+	sudo ip addr del 2.2.2.10  dev enp6s0
+
+Adding route in client/server : 
+	ip route add 10.124.130.0/24 via ens192
+
+tsharak -i <interface>
+tcpdump -i <interface>
+tcpdump -i any icmp
+
+sudo tcpreplay -i ens161 -tK --loop 5 --unique-ip ~/pcaps
+
+for i in `seq 1 10`; do <cmd>; done
+
+curl ipinfo.io/ip    >>>>getting public IP 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ping issue :
+1. Take terminal
+2. Type in sudo ip route add default via <your gateway>(eg:192.168.136.1) dev eth0
+3. 
+4. Sometimes you will be able to ping (ping 8.8.8.8) but no internet connection in the browser, then:
+5. Go to sudo nano /etc/resolv.conf
+6. Add nameserver 8.8.8.8
+7. Add nameserver <your gateway> or nameserver 127.0.1.1
+8. sudo /etc/init.d/networking restart or sudo service networking restart
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
 On mac: (multiple wireshark)
    cd /Applications
    open  Wireshark.app -n
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------
 GDB 
     - thread apply all bt
     - thread threadno  (switch among threads)
     - info threads 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+esxi commands :
+   >  vmkchdev -l | grep "vmnic"
+   >  esxcli network nic get -n vmnic2
+
+To reduce the space
+   cd /vmfs/volumes/datastore/test-VM
+
+vdf -h ——> for space
+
+
+vmkchdev -l | grep "vmnic"
+esxcli network nic get -n vmnic10
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+VLAN interface creation (tagged interfaces) :
+https://www.baeldung.com/linux/vlans-create
+  	 ifconfig
+	sudo apt-get install vlan
+   	sudo modprobe 8021q
+ 	ip link add link ens192 name ens192.1 type vlan id 100
+  	ip addr add 20.20.20.6/24 dev ens192.1
+	ip link set up ens192.1
+   	ifconfig
+
+If we need to delete this VLAN connection:
+	sudo ip link set enp0s3.100 down
+	sudo apt-get install vlan
+
+The settings aren’t lost on reboot or shutdown and the VLAN interface exists
+	$ sudo vi /etc/network/interfaces
+		auto enp0s3.100
+		iface enp0s3.100 inet static
+		address 192.168.0.200
+		netmask 255.255.255.0
+		vlan-raw-device enp0s3
+
+Note : 
+ -  access links (transmit untagged frames) : 
+	an access link can carry traffic for only one VLAN, and therefore usually connects a switch to a user terminal, such as a host, a server, or an unmanaged switch
+ -  trunk links (transmit tagged frames) : (0 to 4095)
+	a trunk link can carry traffic for multiple VLANs, and as such usually connects a switch to another switch or a router
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Disk space issues :
+
+1. enable aggressive clean. CLI:
+debug software disk-usage aggressive-cleaning enable
+debug software disk-usage cleanup deep threshold 90
+
+2. After executing above command, wait a few minutes, check the deleted open files using the following command.
+lsof | grep -i deleted > deleted_file.txt
+
+We should not see many deleted files that are still open. If it's the case then restart the VM should resolve.
+
+3. If restart does not resolve. Login into maint mode, do a FSCK on the sysroot0 or sysroot1, whichever is problematic.
+	(sudo fsck -p /dev/sdc1) - Run fsck to repair the file system:
+		The -p option tells fsck to automatically repair any problems that can be safely fixed without user intervention.
+
+
+lsof is used to list all the deleted files which are still on disk due to open file descriptors. Memory is not immediately freed because the running process still has an open file handle to the just-deleted file
+
+du -kh | sort -h
+du -hx --max-depth=1  | sort -hr
+du -h -sxcBM /opt/* | sort -rn
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ssh-rsa,ssh-rsa,ssh-rsa
+
+
+Unable to negotiate with 10.124.136.254 port 22: no matching host key type found. Their offer: ssh-rsa,ssh-rsa,ssh-rsa
+scp: Connection closed
+
+ssh -p 22 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa  user@myhost
+# or scp
+scp -P 22 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa  user@myhost
+
+scp   -P 22 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa ~/Desktop/a.out root@10.124.136.254:/
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
