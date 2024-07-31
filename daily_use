@@ -16,3 +16,14 @@
     
     
 5. Tmux
+
+
+On mac: (multiple wireshark)
+   cd /Applications
+   open  Wireshark.app -n
+
+
+GDB 
+    - thread apply all bt
+    - thread threadno  (switch among threads)
+    - info threads 
